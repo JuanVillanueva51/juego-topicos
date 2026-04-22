@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://bcmtjee7ag3mm" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_06.png" id="64_g3qou"]
 [ext_resource type="Texture2D" uid="uid://btb1mwu32ijkl" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_07.png" id="65_vvi2r"]
 [ext_resource type="Texture2D" uid="uid://dw13cvxwqey7a" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_08.png" id="66_r2n6p"]
+[ext_resource type="PackedScene" uid="uid://tit0kt8c1tjk" path="res://scenes/enemies/ghost.tscn" id="68_weeiq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deyyv"]
 texture = ExtResource("1_mmvbu")
@@ -1114,3 +1115,6 @@ position = Vector2(1, -14)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=2109430697]
 zoom = Vector2(4, 4)
+
+[node name="ghost" parent="." unique_id=1469644373 instance=ExtResource("68_weeiq")]
+position = Vector2(-54, 24)
