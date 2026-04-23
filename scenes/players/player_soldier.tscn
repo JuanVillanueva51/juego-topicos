@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://tynnheglvhy3"]
+
+[ext_resource type="Texture2D" uid="uid://0hfov8lpmehw" path="res://assets/sprites/Soldier_Idle.png" id="1_xv6vt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afuhr"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd1gc"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p5aq"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miimd"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fti17"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8h3a"]
+atlas = ExtResource("1_xv6vt")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pum5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afuhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd1gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p5aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miimd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fti17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8h3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=309641420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814994385]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=962056848]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_4pum5")
+autoplay = "default"
+frame_progress = 0.79531974
