@@ -1164,5 +1164,4 @@ position = Vector2(-54, 24)
 libraries/ = SubResource("AnimationLibrary_o8oq8")
 autoplay = &"mover"
 
-[node name="waterball" parent="." unique_id=1509365773 instance=ExtResource("69_uxocx")]
-position = Vector2(-11, -23)
+[node name="waterball" parent="." unique_id=790455694 instance=ExtResource("69_uxocx")]
