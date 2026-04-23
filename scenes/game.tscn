@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://dw13cvxwqey7a" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_08.png" id="66_r2n6p"]
 [ext_resource type="PackedScene" uid="uid://tit0kt8c1tjk" path="res://scenes/enemies/ghost.tscn" id="68_weeiq"]
 [ext_resource type="PackedScene" uid="uid://b8r51qckvxmmh" path="res://scenes/proyectiles/waterball.tscn" id="69_uxocx"]
+[ext_resource type="AudioStream" uid="uid://b4l8gpnkrlo36" path="res://assets/music/time_for_adventure.mp3" id="70_7nv0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deyyv"]
 texture = ExtResource("1_mmvbu")
@@ -1164,4 +1165,14 @@ position = Vector2(-54, 24)
 libraries/ = SubResource("AnimationLibrary_o8oq8")
 autoplay = &"mover"
 
+<<<<<<< HEAD
 [node name="waterball" parent="." unique_id=790455694 instance=ExtResource("69_uxocx")]
+=======
+[node name="waterball" parent="." unique_id=1509365773 instance=ExtResource("69_uxocx")]
+position = Vector2(-11, -23)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=239067080]
+stream = ExtResource("70_7nv0b")
+autoplay = true
+parameters/looping = true
+>>>>>>> 5a81ee70ed11fbaf3c9a407f6dd5c5d800e75de3
