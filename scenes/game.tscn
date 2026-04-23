@@ -1489,18 +1489,12 @@ position = Vector2(-54, 24)
 libraries/ = SubResource("AnimationLibrary_o8oq8")
 autoplay = &"mover"
 
-<<<<<<< HEAD
 [node name="CharacterBody2D" parent="." unique_id=723775012 instance=ExtResource("93_ghitk")]
 position = Vector2(245, 76)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=379877860]
 libraries/ = SubResource("AnimationLibrary_kpl5h")
 
-=======
-<<<<<<< HEAD
-[node name="waterball" parent="." unique_id=790455694 instance=ExtResource("69_uxocx")]
-=======
->>>>>>> 33c1835408804adeee84facb6e2fee226216a8ba
 [node name="waterball" parent="." unique_id=1509365773 instance=ExtResource("69_uxocx")]
 position = Vector2(-11, -23)
 
@@ -1508,7 +1502,6 @@ position = Vector2(-11, -23)
 stream = ExtResource("70_7nv0b")
 autoplay = true
 parameters/looping = true
-<<<<<<< HEAD
 
 [node name="TileMap" type="TileMap" parent="." unique_id=189217425]
 tile_set = SubResource("TileSet_r2n6p")
@@ -1541,6 +1534,3 @@ position = Vector2(-519, 94)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2" unique_id=631521322]
 libraries/ = SubResource("AnimationLibrary_kpl5h")
-=======
->>>>>>> 5a81ee70ed11fbaf3c9a407f6dd5c5d800e75de3
->>>>>>> 33c1835408804adeee84facb6e2fee226216a8ba
