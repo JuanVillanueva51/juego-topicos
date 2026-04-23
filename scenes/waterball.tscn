@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b8r51qckvxmmh"]
 
-[ext_resource type="Texture2D" uid="uid://d1p4qg7v8mmne" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xperh"]
+[ext_resource type="Texture2D" uid="uid://cueo023ucnqt0" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
+[ext_resource type="Script" uid="uid://b017l1bbseu0y" path="res://scenes/Waterball.cs" id="1_q6okr"]
+[ext_resource type="Script" uid="uid://j1sb4ri84btc" path="res://scenes/proyectiles/AnimatedSprite2d.cs" id="2_xperh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obyfd"]
 atlas = ExtResource("1_3ls1y")
@@ -36,8 +36,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_reo8j"]
 radius = 2.0
 
-[node name="waterball" type="StaticBody2D" unique_id=1509365773]
-physics_material_override = SubResource("PhysicsMaterial_xperh")
+[node name="waterball" type="CharacterBody2D" unique_id=961869360]
+script = ExtResource("1_q6okr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=127209548]
 texture_filter = 1
@@ -45,6 +45,7 @@ sprite_frames = SubResource("SpriteFrames_tdq7a")
 autoplay = "default"
 frame = 2
 frame_progress = 0.70980954
+script = ExtResource("2_xperh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=902306678]
 position = Vector2(3, 0)

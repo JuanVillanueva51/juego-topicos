@@ -68,7 +68,8 @@
 [ext_resource type="Texture2D" uid="uid://btb1mwu32ijkl" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_07.png" id="65_vvi2r"]
 [ext_resource type="Texture2D" uid="uid://dw13cvxwqey7a" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_08.png" id="66_r2n6p"]
 [ext_resource type="PackedScene" uid="uid://tit0kt8c1tjk" path="res://scenes/enemies/ghost.tscn" id="68_weeiq"]
-[ext_resource type="PackedScene" uid="uid://b8r51qckvxmmh" path="res://scenes/proyectiles/waterball.tscn" id="69_uxocx"]
+[ext_resource type="PackedScene" uid="uid://b8r51qckvxmmh" path="res://scenes/waterball.tscn" id="69_uxocx"]
+[ext_resource type="PackedScene" uid="uid://dntuke0k3s3he" path="res://scenes/bee.tscn" id="70_7nv0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deyyv"]
 texture = ExtResource("1_mmvbu")
@@ -1166,3 +1167,6 @@ autoplay = &"mover"
 
 [node name="waterball" parent="." unique_id=1509365773 instance=ExtResource("69_uxocx")]
 position = Vector2(-11, -23)
+
+[node name="Bee" parent="." unique_id=620315782 instance=ExtResource("70_7nv0b")]
+proyectilScene = ExtResource("69_uxocx")

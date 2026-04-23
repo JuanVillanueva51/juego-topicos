@@ -11,13 +11,10 @@ config_version=5
 [application]
 
 config/name="Juego-topicos"
-<<<<<<< HEAD
 run/main_scene="uid://dsmhe8w05kjkq"
-=======
-run/main_scene="uid://c8tx1qdts7k5n"
->>>>>>> 5ae0b9616bd90fd8232b7fddb27027408ee93e1e
-config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="uid://dsmhe8w05kjkq"
 
 [dotnet]
 
