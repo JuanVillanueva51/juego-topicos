@@ -1,21 +1,24 @@
 using Godot;
 using System;
 
-public partial class Waterball : Area2D
+public partial class Waterball : CharacterBody2D
 {
+	private Node2D player;
+	private AnimatedSprite2D sprite;
+	private float speed = 300f;
+	Vector2 direccion;
+
 	public override void _Ready()
 	{
-		// Conectar la señal body_entered al método OnBodyEntered
-		BodyEntered += OnBodyEntered;
+		player = GetNode<Node2D>("/root/Game/player");
+		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		GD.Print(player);
+		direccion = (player.GlobalPosition - GlobalPosition).Normalized();
 	}
-
-	private void OnBodyEntered(Node body)
+	public override void _PhysicsProcess(double delta)
 	{
-		// Aquí podrías comprobar si el que entra es el jugador
-		if (body is Player)
-		{
-			GD.Print("+1 coin");
-			QueueFree(); // Elimina la moneda de la escena
-		}
+		if (player == null) return;
+		Velocity = direccion * speed;
+		MoveAndSlide();
 	}
 }
