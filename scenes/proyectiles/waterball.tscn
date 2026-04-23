@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://b8r51qckvxmmh"]
 
 [ext_resource type="Texture2D" uid="uid://d1p4qg7v8mmne" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xperh"]
+[ext_resource type="Script" uid="uid://c1ab4j28nnflj" path="res://scripts/Waterball.cs" id="1_xperh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obyfd"]
 atlas = ExtResource("1_3ls1y")
@@ -33,19 +32,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_reo8j"]
-radius = 2.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xperh"]
+radius = 3.0
 
-[node name="waterball" type="StaticBody2D" unique_id=1509365773]
-physics_material_override = SubResource("PhysicsMaterial_xperh")
+[node name="waterball" type="Area2D" unique_id=790455694]
+collision_mask = 2
+script = ExtResource("1_xperh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=127209548]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tdq7a")
 autoplay = "default"
-frame = 2
-frame_progress = 0.70980954
+frame_progress = 0.36699528
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=902306678]
-position = Vector2(3, 0)
-shape = SubResource("CircleShape2D_reo8j")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77688245]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_xperh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

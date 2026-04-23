@@ -255,6 +255,7 @@ size = Vector2(7, 14)
 
 [node name="player" type="CharacterBody2D" unique_id=1688695486]
 z_index = 5
+collision_layer = 2
 script = ExtResource("1_ldeu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975637748]
