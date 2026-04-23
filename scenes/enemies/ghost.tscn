@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://tit0kt8c1tjk"]
+
+[ext_resource type="Texture2D" uid="uid://bt1soe1fjxrvl" path="res://assets/sprites/ghost.png" id="1_tijse"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly0wf"]
+atlas = ExtResource("1_tijse")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr43c"]
+atlas = ExtResource("1_tijse")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2dff"]
+atlas = ExtResource("1_tijse")
+region = Rect2(34, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pug3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly0wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr43c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2dff")
+}],
+"loop": true,
+"name": &"ghost",
+"speed": 5.0
+}]
+
+[node name="ghost" type="CharacterBody2D" unique_id=1469644373]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1932480645]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pug3q")
+animation = &"ghost"
+autoplay = "ghost"
+frame_progress = 0.5930043
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1552835876]
