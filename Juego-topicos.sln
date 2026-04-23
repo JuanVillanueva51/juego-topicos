@@ -1,6 +1,10 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego-topicos", "Juego-topicos.csproj", "{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego-topicos", "Juego-topicos.csproj", "{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}"
+>>>>>>> 695c4aef00a30c41ee1e3635b962240b15714364
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +13,20 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{AE3DC49D-A9B9-4DB7-8050-C26B3639C93A}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+=======
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{48DEAE6C-E86B-4292-BFB7-4F9D9D1E4ACC}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+>>>>>>> 695c4aef00a30c41ee1e3635b962240b15714364
 	EndGlobalSection
 EndGlobal

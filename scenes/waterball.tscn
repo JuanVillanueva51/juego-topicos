@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://b8r51qckvxmmh"]
 
+<<<<<<< HEAD:scenes/waterball.tscn
 [ext_resource type="Texture2D" uid="uid://cueo023ucnqt0" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
 [ext_resource type="Script" uid="uid://b017l1bbseu0y" path="res://scenes/Waterball.cs" id="1_q6okr"]
 [ext_resource type="Script" uid="uid://j1sb4ri84btc" path="res://scenes/proyectiles/AnimatedSprite2d.cs" id="2_xperh"]
+=======
+[ext_resource type="Texture2D" uid="uid://d1p4qg7v8mmne" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
+[ext_resource type="Script" uid="uid://c1ab4j28nnflj" path="res://scripts/Waterball.cs" id="1_xperh"]
+>>>>>>> 695c4aef00a30c41ee1e3635b962240b15714364:scenes/proyectiles/waterball.tscn
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obyfd"]
 atlas = ExtResource("1_3ls1y")
@@ -33,20 +38,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_reo8j"]
-radius = 2.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xperh"]
+radius = 3.0
 
+<<<<<<< HEAD:scenes/waterball.tscn
 [node name="waterball" type="CharacterBody2D" unique_id=961869360]
 script = ExtResource("1_q6okr")
+=======
+[node name="waterball" type="Area2D" unique_id=790455694]
+collision_mask = 2
+script = ExtResource("1_xperh")
+>>>>>>> 695c4aef00a30c41ee1e3635b962240b15714364:scenes/proyectiles/waterball.tscn
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=127209548]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tdq7a")
 autoplay = "default"
+<<<<<<< HEAD:scenes/waterball.tscn
 frame = 2
 frame_progress = 0.70980954
 script = ExtResource("2_xperh")
+=======
+frame_progress = 0.36699528
+>>>>>>> 695c4aef00a30c41ee1e3635b962240b15714364:scenes/proyectiles/waterball.tscn
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=902306678]
-position = Vector2(3, 0)
-shape = SubResource("CircleShape2D_reo8j")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77688245]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_xperh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]
