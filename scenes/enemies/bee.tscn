@@ -156,9 +156,12 @@ radius = 6.0827627
 script = ExtResource("1_qf6nb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1373961466]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c3doc")
 animation = &"walk_LEFT"
 autoplay = "walk_LEFT"
+frame = 2
+frame_progress = 0.870354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=451191956]
 position = Vector2(0, 3)

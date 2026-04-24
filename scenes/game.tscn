@@ -68,7 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://btb1mwu32ijkl" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_07.png" id="65_vvi2r"]
 [ext_resource type="Texture2D" uid="uid://dw13cvxwqey7a" path="res://assets/sprites/Terreno/1 Tiles/FieldsTile_08.png" id="66_r2n6p"]
 [ext_resource type="PackedScene" uid="uid://tit0kt8c1tjk" path="res://scenes/enemies/ghost.tscn" id="68_weeiq"]
-[ext_resource type="PackedScene" uid="uid://fcsfn7u1ygpa" path="res://scenes/waterball.tscn" id="69_uxocx"]
+[ext_resource type="PackedScene" uid="uid://fcsfn7u1ygpa" path="res://scenes/proyectiles/waterball.tscn" id="69_uxocx"]
 [ext_resource type="AudioStream" uid="uid://b4l8gpnkrlo36" path="res://assets/music/time_for_adventure.mp3" id="70_7nv0b"]
 [ext_resource type="Texture2D" uid="uid://du2kdoxgrtr0y" path="res://assets/sprites/Terreno/2 Objects/4 Stone/1.png" id="71_okmmv"]
 [ext_resource type="Texture2D" uid="uid://bwd445a5wg7tx" path="res://assets/sprites/Terreno/2 Objects/4 Stone/2.png" id="72_ja1h7"]
@@ -114,7 +114,8 @@
 [ext_resource type="Texture2D" uid="uid://bpw0gyoxvncdn" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt4.png" id="112_r2n6p"]
 [ext_resource type="Texture2D" uid="uid://7uihkr3dtlkm" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt5.png" id="113_deyyv"]
 [ext_resource type="Texture2D" uid="uid://cd6vr4q6ql88n" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt6.png" id="114_vnd7u"]
-[ext_resource type="PackedScene" uid="uid://dntuke0k3s3he" path="res://scenes/bee.tscn" id="115_ghitk"]
+[ext_resource type="PackedScene" uid="uid://brdhf1e8eilds" path="res://scenes/proyectiles/plasmaball.tscn" id="115_ghitk"]
+[ext_resource type="PackedScene" uid="uid://dntuke0k3s3he" path="res://scenes/enemies/bee.tscn" id="116_rundi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deyyv"]
 texture = ExtResource("1_mmvbu")
@@ -1483,10 +1484,10 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="ghost" parent="." unique_id=1469644373 instance=ExtResource("68_weeiq")]
+[node name="ghost" parent="." unique_id=1113619028 instance=ExtResource("68_weeiq")]
 position = Vector2(-54, 24)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ghost" unique_id=1776255802]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ghost" unique_id=1118874633]
 libraries/ = SubResource("AnimationLibrary_o8oq8")
 autoplay = &"mover"
 
@@ -1530,11 +1531,10 @@ position = Vector2(-663, -24)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TileMapLayer/CharacterBody2D/CharacterBody2D" unique_id=1972206061]
 libraries/ = SubResource("AnimationLibrary_kpl5h")
 
-[node name="CharacterBody2D2" parent="." unique_id=1575785804 instance=ExtResource("93_ghitk")]
-position = Vector2(-519, 94)
+[node name="plasmaball" parent="." unique_id=758583089 instance=ExtResource("115_ghitk")]
+position = Vector2(-24, 25)
+collision_mask = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2" unique_id=631521322]
-libraries/ = SubResource("AnimationLibrary_kpl5h")
-
-[node name="Bee" parent="." unique_id=620315782 instance=ExtResource("115_ghitk")]
-position = Vector2(26, 46)
+[node name="Bee" parent="." unique_id=620315782 instance=ExtResource("116_rundi")]
+position = Vector2(-19, 58)
+collision_layer = 4

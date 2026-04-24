@@ -254,6 +254,7 @@ animations = [{
 size = Vector2(7, 17)
 
 [node name="player" type="CharacterBody2D" unique_id=1688695486]
+collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975637748]
@@ -263,5 +264,4 @@ animation = &"vertical_DOWN"
 autoplay = "idleDOWN"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998602919]
-position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_d2wvv")
