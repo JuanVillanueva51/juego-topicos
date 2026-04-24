@@ -12,7 +12,6 @@ public partial class Waterball : CharacterBody2D
 	{
 		player = GetNode<Node2D>("/root/Game/player");
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		GD.Print(player);
 		direccion = (player.GlobalPosition - GlobalPosition).Normalized();
 	}
 	public override void _PhysicsProcess(double delta)
