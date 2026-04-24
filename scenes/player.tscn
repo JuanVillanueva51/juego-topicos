@@ -255,7 +255,11 @@ animations = [{
 size = Vector2(7, 17)
 
 [node name="player" type="CharacterBody2D" unique_id=1688695486]
+<<<<<<< HEAD
 collision_layer = 26
+=======
+collision_layer = 2
+>>>>>>> c23e3e01579cb44e2db814de485b0101400595f3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975637748]
@@ -265,7 +269,6 @@ animation = &"vertical_DOWN"
 autoplay = "idleDOWN"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998602919]
-position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_d2wvv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1034327667]

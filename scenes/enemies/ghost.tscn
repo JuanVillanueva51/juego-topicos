@@ -48,4 +48,5 @@ frame_progress = 0.5930043
 position = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone" unique_id=2024936422]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_ly0wf")
