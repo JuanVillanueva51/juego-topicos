@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 		Vector2 velocity = Velocity;
 
 		// Obtener dirección en X y Y
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 direction = Input.GetVector("Move_LEFT", "Move_RIGHT", "Move_UP", "Move_DOWN");
 
 		if (direction != Vector2.Zero)
 		{
