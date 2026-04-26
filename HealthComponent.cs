@@ -19,9 +19,8 @@ public partial class HealthComponent : Node
 		
 	}
 	public void die(){
-		GD.Print($"{GetParent().Name} murio");
-		GetParent().QueueFree();
-		
-		GetTree().ChangeSceneToFile("res://scenes/scene_intro.tscn");
+	GD.Print($"{GetParent().Name} murio");
+	GetParent().QueueFree();
+	GetTree().ChangeSceneToFile("res://scenes/Game Over/Game Over.tscn");
 	}
 }

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deco7iapjuraq" path="res://scripts/Player.cs" id="1_ldeu4"]
 [ext_resource type="Texture2D" uid="uid://bbm8i4x4hy4nn" path="res://assets/sprites/Idle.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://b63en525ptfsg" path="res://HealthComponent.cs" id="3_kc87p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -267,3 +268,7 @@ autoplay = "idleDOWN"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998602919]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_d2wvv")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=2007251862]
+script = ExtResource("3_kc87p")
+maxHealth = 10
