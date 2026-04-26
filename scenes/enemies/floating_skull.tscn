@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dixeqa7ak2yf4"]
+
+[ext_resource type="Script" uid="uid://chsh6ma3axa38" path="res://scripts/FloatingSkull.cs" id="1_6ucnj"]
+[ext_resource type="Texture2D" uid="uid://dnj67846ffrog" path="res://assets/sprites/Enemigos/skullanim.png" id="1_kno5i"]
+[ext_resource type="PackedScene" uid="uid://lsrtlad74byy" path="res://scenes/killzone.tscn" id="2_qfi3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfi3v"]
+atlas = ExtResource("1_kno5i")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ucnj"]
+atlas = ExtResource("1_kno5i")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lul8l"]
+atlas = ExtResource("1_kno5i")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc70s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfi3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ucnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lul8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ucnj"]
+
+[node name="floating_skull" type="CharacterBody2D" unique_id=1940513141]
+script = ExtResource("1_6ucnj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=637040678]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mc70s")
+autoplay = "default"
+frame_progress = 0.79275024
+
+[node name="Killzone" parent="AnimatedSprite2D" unique_id=1026101315 instance=ExtResource("2_qfi3v")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone" unique_id=516689663]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_6ucnj")
