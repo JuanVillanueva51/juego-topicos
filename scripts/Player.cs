@@ -3,6 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+<<<<<<< HEAD
 	/*
 	Establecemos la velocidad inicial del jugador junto con una variable de
 	tipo StatsForPlayer para sus estadisticas*/
@@ -18,6 +19,15 @@ public partial class Player : CharacterBody2D
 		if(stats == null){
 			GD.Print("No se encontro component");
 		}
+=======
+	public const float Speed = 300.0f;
+	private AnimatedSprite2D sprite;
+
+	public override void _Ready()
+	{
+		AddToGroup("player");
+		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
 	}
 	/*
 	Revisamos constantemente el movimiento del jugador, en este caso utilizamos
@@ -34,8 +44,13 @@ public partial class Player : CharacterBody2D
 		}
 		Vector2 velocity = Velocity;
 		// Obtener dirección en X y Y
+<<<<<<< HEAD
 		Vector2 direction = Input.GetVector("Move_LEFT", "Move_RIGHT", "Move_UP", "Move_DOWN");
 		
+=======
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * speedFinal;
@@ -49,5 +64,50 @@ public partial class Player : CharacterBody2D
 		}
 		Velocity = velocity;
 		MoveAndSlide();
+		
+		UpdateAnimation();
+	}
+	private void UpdateAnimation()
+	{
+		if (Velocity.Y > 0.2f)
+		{
+			PlayAnim("walk_Down");
+		}
+		else if (Velocity.Y < -0.2f)
+		{
+			PlayAnim("walk_Up");
+		}
+		else if (Velocity.X > 0.2f)
+		{
+			sprite.FlipH = true;
+			PlayAnim("walk_Left_Down");
+		}
+		else if (Velocity.X < -0.2f)
+		{
+			sprite.FlipH = true;
+			PlayAnim("walk_Right_Down");
+		}
+		if (Velocity.X > 0.2f && Velocity.Y > 0.2f){
+			sprite.FlipH = false;
+			PlayAnim("walk_Right_Down");
+		}
+		else if (Velocity.X < -0.2f && Velocity.Y > 0.2f){
+			sprite.FlipH = false;
+			PlayAnim("walk_Left_Down");
+		}
+		else if (Velocity.X > 0.2f && Velocity.Y <  -0.2f){
+			sprite.FlipH = false;
+			PlayAnim("walk_Right_Up");
+		}
+		else if (Velocity.X < -0.2f && Velocity.Y < -0.2f){
+			sprite.FlipH = false;
+			PlayAnim("walk_Left_Up");
+		}
+	}
+	
+	private void PlayAnim(string anim)
+	{
+		if (sprite.Animation != anim)
+			sprite.Play(anim);
 	}
 }

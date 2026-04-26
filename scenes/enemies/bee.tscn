@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqfdr5rpbau0a" path="res://FollowPlayerComponent.cs" id="1_oynbf"]
 [ext_resource type="Script" uid="uid://bffjuc8aketg3" path="res://scripts/Bee.cs" id="1_qf6nb"]
-[ext_resource type="PackedScene" uid="uid://fcsfn7u1ygpa" path="res://scenes/waterball.tscn" id="2_kro73"]
+[ext_resource type="PackedScene" uid="uid://fcsfn7u1ygpa" path="res://scenes/proyectiles/waterball.tscn" id="2_kro73"]
 [ext_resource type="Texture2D" uid="uid://dg8qa7xgwu4c" path="res://assets/sprites/Enemigos/4/D_Walk.png" id="2_oynbf"]
 [ext_resource type="Texture2D" uid="uid://bmgtcderk3f7d" path="res://assets/sprites/Enemigos/4/S_Walk.png" id="3_nkr4b"]
 [ext_resource type="Texture2D" uid="uid://c4ue01tai1fhk" path="res://assets/sprites/Enemigos/4/U_Walk.png" id="4_kro73"]
@@ -163,14 +163,12 @@ radius = 14.035668
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("1_qf6nb")
+speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1373961466]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c3doc")
 animation = &"walk_LEFT"
-autoplay = "walk_LEFT"
-frame = 2
-frame_progress = 0.870354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=451191956]
 position = Vector2(0, 3)
