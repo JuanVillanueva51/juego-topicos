@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dsmhe8w05kjkq"]
+[gd_scene format=4 uid="uid://rxkxfbgk1l03"]
 
 [ext_resource type="PackedScene" uid="uid://diju0yli0ml8i" path="res://scenes/players/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cq7880g86jp2e" path="res://WaveManager.cs" id="52_pf7vy"]
@@ -49,11 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bpw0gyoxvncdn" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt4.png" id="112_r2n6p"]
 [ext_resource type="Texture2D" uid="uid://7uihkr3dtlkm" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt5.png" id="113_deyyv"]
 [ext_resource type="Texture2D" uid="uid://cd6vr4q6ql88n" path="res://assets/sprites/Terreno/2 Objects/7 Decor/Dirt6.png" id="114_vnd7u"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/proyectiles/plasmaball.tscn" id="115_ghitk"]
-=======
-[ext_resource type="PackedScene" uid="uid://brdhf1e8eilds" path="res://scenes/proyectiles/plasmaball.tscn" id="115_ghitk"]
->>>>>>> 850d756a76585f7cea086314613e4caa21ab6be4
 [ext_resource type="PackedScene" uid="uid://dntuke0k3s3he" path="res://scenes/enemies/bee.tscn" id="116_rundi"]
 [ext_resource type="Texture2D" uid="uid://ulm624ganlvv" path="res://assets/sprites/Terreno/3 Animated Objects/Grass/Grass.png" id="117_7kwaa"]
 
@@ -6538,7 +6534,7 @@ layer_0/tile_data = PackedInt32Array(0, 1638400, 21, 65536, 1638400, 22, 131072,
 position = Vector2(-39, -17)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=2109430697]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
