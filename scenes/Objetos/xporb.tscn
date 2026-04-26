@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bh6h4rs3oho0l"]
+
+[ext_resource type="Script" uid="uid://dfw37j81deawr" path="res://XPORB.cs" id="1_8axd7"]
+[ext_resource type="Texture2D" uid="uid://coolpngnlehu8" path="res://assets/sprites/light_01.png" id="2_sobk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouc7w"]
+atlas = ExtResource("2_sobk1")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sndxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouc7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5gag"]
+radius = 2.0
+
+[node name="XPORB" type="Area2D" unique_id=153790867]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_8axd7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1474178585]
+position = Vector2(-0.12500006, 0.24999991)
+scale = Vector2(0.008300781, 0.0087890625)
+sprite_frames = SubResource("SpriteFrames_sndxm")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285643054]
+shape = SubResource("CircleShape2D_c5gag")

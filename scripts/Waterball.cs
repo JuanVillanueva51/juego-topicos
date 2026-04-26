@@ -3,6 +3,8 @@ using System;
 
 public partial class Waterball : CharacterBody2D
 {
+	/* YA NO SE UTILIZA
+	*/
 	private Node2D player;
 	private AnimatedSprite2D sprite;
 	private float speed = 300f;

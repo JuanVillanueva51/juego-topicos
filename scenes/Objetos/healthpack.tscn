@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://1i5pxe1qh0j6"]
+
+[ext_resource type="Script" uid="uid://cemirtlmxpdn5" path="res://HEALTHPACK.cs" id="1_ouc7w"]
+[ext_resource type="Texture2D" uid="uid://coolpngnlehu8" path="res://assets/sprites/light_01.png" id="2_0o8mg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouc7w"]
+atlas = ExtResource("2_0o8mg")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sndxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouc7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5gag"]
+radius = 2.0
+
+[node name="HEALTHPACK" type="Area2D" unique_id=588521591]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_ouc7w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578206274]
+position = Vector2(-0.5000028, 0.50000316)
+scale = Vector2(0.0058593852, 0.005859387)
+sprite_frames = SubResource("SpriteFrames_sndxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=138160401]
+shape = SubResource("CircleShape2D_c5gag")

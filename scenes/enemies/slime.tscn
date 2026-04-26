@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://drtgkupikwqtc"]
+
+[ext_resource type="Script" uid="uid://rwt46lpm6pje" path="res://Slime.cs" id="1_uhx0m"]
+[ext_resource type="Texture2D" uid="uid://gx5wiwlfs4j" path="res://assets/sprites/Enemigos/1/D_Walk.png" id="2_7uxu4"]
+[ext_resource type="Script" uid="uid://cqfdr5rpbau0a" path="res://FollowPlayerComponent.cs" id="3_mdcui"]
+[ext_resource type="Script" uid="uid://spn6pgpk1k1b" path="res://ContactDamageComponent.cs" id="4_ikdmk"]
+[ext_resource type="Script" uid="uid://b63en525ptfsg" path="res://HealthComponent.cs" id="5_jjup5"]
+[ext_resource type="Script" uid="uid://cf7y262af44ld" path="res://KnockBackComponent.cs" id="6_wfyvu"]
+[ext_resource type="PackedScene" uid="uid://bh6h4rs3oho0l" path="res://scenes/Objetos/xporb.tscn" id="8_mdcui"]
+[ext_resource type="Script" uid="uid://bldve3b0vgg0c" path="res://DropComponent.cs" id="8_wbf5k"]
+[ext_resource type="PackedScene" uid="uid://ctil4834m3wfk" path="res://scenes/Objetos/goldcoin.tscn" id="9_ikdmk"]
+[ext_resource type="PackedScene" uid="uid://1i5pxe1qh0j6" path="res://scenes/Objetos/healthpack.tscn" id="10_jjup5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvrjd"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx7r3"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdhaw"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4uwr"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5sr2"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84gbg"]
+atlas = ExtResource("2_7uxu4")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ji7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvrjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx7r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdhaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4uwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5sr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84gbg")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yutl4"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wnf82"]
+radius = 14.035668
+
+[node name="Slime" type="CharacterBody2D" unique_id=389794601]
+script = ExtResource("1_uhx0m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2097719430]
+sprite_frames = SubResource("SpriteFrames_7ji7s")
+animation = &"Walk"
+autoplay = "Walk"
+frame = 2
+frame_progress = 0.93719155
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853341734]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_yutl4")
+
+[node name="FollowPlayerComponent" type="Node" parent="." unique_id=584536761]
+script = ExtResource("3_mdcui")
+
+[node name="ContactDamageArea" type="Area2D" parent="." unique_id=2107396136]
+collision_mask = 2
+script = ExtResource("4_ikdmk")
+contactDamage = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamageArea" unique_id=1111679127]
+position = Vector2(1, 4)
+shape = SubResource("CircleShape2D_wnf82")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1678443938]
+script = ExtResource("5_jjup5")
+maxHealth = 1
+
+[node name="KnockBackComponent" type="Node" parent="." unique_id=1495878309]
+script = ExtResource("6_wfyvu")
+
+[node name="DropComponent" type="Node" parent="." unique_id=393560625]
+script = ExtResource("8_wbf5k")
+XPORBScene = ExtResource("8_mdcui")
+GOLDCOINScene = ExtResource("9_ikdmk")
+HEALTHPACKScene = ExtResource("10_jjup5")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c8tx1qdts7k5n"]
+[gd_scene format=3 uid="uid://ci3oirhwqel06"]
 
 [ext_resource type="Script" uid="uid://cqxp6il510e4c" path="res://scripts/SceneIntro.cs" id="1_kl1tr"]
 [ext_resource type="Texture2D" uid="uid://ps2utpnggkwn" path="res://scenes/intro/intro2.webp" id="2_res02"]
