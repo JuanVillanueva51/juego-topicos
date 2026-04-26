@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tit0kt8c1tjk"]
 
-[ext_resource type="Texture2D" uid="uid://bt1soe1fjxrvl" path="res://assets/sprites/ghost.png" id="1_tijse"]
+[ext_resource type="Texture2D" uid="uid://bt1soe1fjxrvl" path="res://assets/sprites/Enemigos/ghost.png" id="1_tijse"]
 [ext_resource type="PackedScene" uid="uid://lsrtlad74byy" path="res://scenes/killzone.tscn" id="2_ly0wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ly0wf"]
@@ -35,7 +35,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ly0wf"]
 radius = 6.0827627
 
-[node name="ghost" type="Node2D" unique_id=1113619028]
+[node name="ghost" type="CharacterBody2D" unique_id=1532805104]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1932480645]
 texture_filter = 1
