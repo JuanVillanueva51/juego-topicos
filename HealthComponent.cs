@@ -40,14 +40,11 @@ public partial class HealthComponent : Node
 	y quitamos la entidad de la queue
 	*/
 	public void die(){
-<<<<<<< HEAD
-		GD.Print($"{GetParent().Name} murio");
-		EmitSignal(SignalName.Died);
-		GetParent().QueueFree();
-=======
 	GD.Print($"{GetParent().Name} murio");
+	EmitSignal(SignalName.Died);
 	GetParent().QueueFree();
+	if(GetParent().Name == "player"){
 	GetTree().ChangeSceneToFile("res://scenes/Game Over/Game Over.tscn");
->>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
+	}
 	}
 }

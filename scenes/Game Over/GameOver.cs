@@ -6,7 +6,7 @@ public partial class GameOver : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+	
 	var label = GetNode<RichTextLabel>("CenterContainer/Label");
 	label.Text = $"[center][wave]GAME OVER\nSCORE: {Global.Score}[/wave][/center]";
 	Global.Score = 0;

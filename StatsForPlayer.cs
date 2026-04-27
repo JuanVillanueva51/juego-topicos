@@ -66,4 +66,12 @@ public partial class StatsForPlayer : Node
 		speedExtra += extra;
 		GD.Print($"Velocidad aumentada a {speedExtra}");
 	}
+	public bool spendGold(int amount)
+	{
+	if (gold < amount)
+		return false;
+	gold -= amount;
+	return true;
+	}
+	
 }

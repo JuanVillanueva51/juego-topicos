@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://v5jhmey3kjaj"]
+
+[ext_resource type="PackedScene" uid="uid://de0q3y4dflpfg" path="res://scenes/normal_bullet.tscn" id="1_cr7w1"]
+[ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="1_newtt"]
+[ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="2_0nsmq"]
+
+[resource]
+script = ExtResource("1_newtt")
+name = "Shotgun"
+ProjectileScene = ExtResource("1_cr7w1")
+WeaponTexture = ExtResource("2_0nsmq")
+cooldown = 0.9
+projectileSpeed = 350.0
+lifeTime = 0.7
+shootQuantity = 5
+spread = 35.0
+metadata/_custom_type_script = "uid://dbo7klliu07uj"
