@@ -57,7 +57,8 @@ Speed = 150.0
 
 [node name="ProjectileDamageComponent" type="Area2D" parent="." unique_id=878826977]
 position = Vector2(-1, -2)
-collision_layer = 2
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("3_lkt5p")
 dmg = 25
 

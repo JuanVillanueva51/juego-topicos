@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dx4x38ahwe4jm"]
+
+[ext_resource type="Texture2D" uid="uid://cx7iaqtycs8sd" path="res://assets/sprites/All_Fire_Bullet_Pixel_16x16_00.png" id="1_70poi"]
+[ext_resource type="Script" uid="uid://sha53hnmpf7p" path="res://ProjectileMovementComponent.cs" id="2_d0u3k"]
+[ext_resource type="Script" uid="uid://bpq1ggejo4mhg" path="res://ProjectileDamageComponent.cs" id="3_et1us"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek0we"]
+atlas = ExtResource("1_70poi")
+region = Rect2(252, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lyr2"]
+atlas = ExtResource("1_70poi")
+region = Rect2(270, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krtjy"]
+atlas = ExtResource("1_70poi")
+region = Rect2(288, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd3q6"]
+atlas = ExtResource("1_70poi")
+region = Rect2(306, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oghf"]
+atlas = ExtResource("1_70poi")
+region = Rect2(252, 17, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb636"]
+atlas = ExtResource("1_70poi")
+region = Rect2(270, 17, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw72x"]
+atlas = ExtResource("1_70poi")
+region = Rect2(288, 17, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6sha"]
+atlas = ExtResource("1_70poi")
+region = Rect2(306, 17, 18, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ry41n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek0we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lyr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krtjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd3q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oghf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb636")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw72x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6sha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnjqm"]
+radius = 6.576473
+
+[node name="ShotgunBullet" type="CharacterBody2D" unique_id=1138550897]
+collision_layer = 128
+collision_mask = 128
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1119067761]
+sprite_frames = SubResource("SpriteFrames_ry41n")
+autoplay = "default"
+frame_progress = 0.55151635
+
+[node name="ProjectileMovementComponent" type="Node" parent="." unique_id=394319517]
+script = ExtResource("2_d0u3k")
+Speed = 150.0
+
+[node name="ProjectileDamageComponent" type="Area2D" parent="." unique_id=878826977]
+position = Vector2(-1, -2)
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("3_et1us")
+dmg = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDamageComponent" unique_id=379511959]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_gnjqm")

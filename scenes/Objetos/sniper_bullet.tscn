@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dw1kiqee1r46q"]
+
+[ext_resource type="Texture2D" uid="uid://cx7iaqtycs8sd" path="res://assets/sprites/All_Fire_Bullet_Pixel_16x16_00.png" id="1_vg6fv"]
+[ext_resource type="Script" uid="uid://sha53hnmpf7p" path="res://ProjectileMovementComponent.cs" id="2_30esi"]
+[ext_resource type="Script" uid="uid://bpq1ggejo4mhg" path="res://ProjectileDamageComponent.cs" id="3_ku8ao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg6fv"]
+atlas = ExtResource("1_vg6fv")
+region = Rect2(357, 272, 51, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30esi"]
+atlas = ExtResource("1_vg6fv")
+region = Rect2(306, 272, 51, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku8ao"]
+atlas = ExtResource("1_vg6fv")
+region = Rect2(255, 272, 51, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjfnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg6fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30esi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku8ao")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg6fv"]
+size = Vector2(45, 8)
+
+[node name="SniperBullet" type="CharacterBody2D" unique_id=1138550897]
+collision_layer = 128
+collision_mask = 128
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2028693719]
+sprite_frames = SubResource("SpriteFrames_xjfnr")
+frame_progress = 0.22584084
+
+[node name="ProjectileMovementComponent" type="Node" parent="." unique_id=394319517]
+script = ExtResource("2_30esi")
+Speed = 150.0
+
+[node name="ProjectileDamageComponent" type="Area2D" parent="." unique_id=878826977]
+position = Vector2(-1, -2)
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("3_ku8ao")
+dmg = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDamageComponent" unique_id=379511959]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_vg6fv")

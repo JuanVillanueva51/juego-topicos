@@ -68,6 +68,8 @@ radius = 5.0
 radius = 14.035668
 
 [node name="Slime" type="CharacterBody2D" unique_id=389794601]
+collision_layer = 128
+collision_mask = 144
 script = ExtResource("1_uhx0m")
 speed = 100.0
 maxHealth = 25.0
