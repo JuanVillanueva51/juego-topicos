@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://diju0yli0ml8i"]
 
 [ext_resource type="Script" uid="uid://deco7iapjuraq" path="res://scripts/Player.cs" id="1_ldeu4"]
-[ext_resource type="Texture2D" uid="uid://p5t0itaj2t2n" path="res://scenes/players/walk_Down.png" id="2_sguum"]
-[ext_resource type="Texture2D" uid="uid://1ipficalfeob" path="res://scenes/players/walk_Left_Down.png" id="3_jwv1m"]
+[ext_resource type="Texture2D" uid="uid://bqbqpgb5cu1vu" path="res://scenes/players/walk_Down.png" id="2_sguum"]
+[ext_resource type="Texture2D" uid="uid://dbirhix77slmi" path="res://scenes/players/walk_Left_Down.png" id="3_jwv1m"]
 [ext_resource type="Script" uid="uid://b63en525ptfsg" path="res://HealthComponent.cs" id="3_kc87p"]
-[ext_resource type="Texture2D" uid="uid://cmem12p57w5lc" path="res://scenes/players/walk_Right_Down.png" id="4_phaeh"]
+[ext_resource type="Texture2D" uid="uid://cvbaj6r810ddc" path="res://scenes/players/walk_Right_Down.png" id="4_phaeh"]
 [ext_resource type="Texture2D" uid="uid://bl7ysnkc6fjdb" path="res://scenes/players/walk_Left_Up.png" id="4_yl2j2"]
-[ext_resource type="Texture2D" uid="uid://e660gatbi4rb" path="res://scenes/players/walk_Up.png" id="5_yl2j2"]
+[ext_resource type="Texture2D" uid="uid://rw5c7oxjc6xn" path="res://scenes/players/walk_Up.png" id="5_yl2j2"]
 [ext_resource type="Texture2D" uid="uid://djsme3m3pp40r" path="res://scenes/players/walk_Right_Up.png" id="6_es4m5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es4m5"]
@@ -384,6 +384,7 @@ size = Vector2(7, 14)
 [node name="player" type="CharacterBody2D" unique_id=1688695486]
 z_index = 5
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ldeu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975637748]
