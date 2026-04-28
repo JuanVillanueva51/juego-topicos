@@ -20,7 +20,7 @@ public partial class StatsUpZone : Area2D
 		stayTimer.Timeout += OnTimerTimeout;
 	}
 
-	private void OnBodyEntered(Node body)
+	private void OnBodyEntered(Area2D body)
 	{
 		GD.Print("Entro");
 		if (body.IsInGroup("player"))
@@ -29,7 +29,7 @@ public partial class StatsUpZone : Area2D
 		}
 	}
 
-	private void OnBodyExited(Node body)
+	private void OnBodyExited(Area2D body)
 	{
 		GD.Print("Salio");
 		if (body.IsInGroup("player"))

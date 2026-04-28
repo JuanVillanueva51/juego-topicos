@@ -33,9 +33,9 @@ public partial class WaveManager : Node
 	private int currentWave = 0;
 	private int espaciosDisponibles = 0;
 	private int enemigosVivos = 0;
-	private float descansoTimer = 0f;
+	public float descansoTimer = 0f;
 	private float spawnTimer = 0f;
-	private bool descansando = true;
+	public bool descansando = true;
 	private bool spawneando = false;
 	
 	/*

@@ -44,7 +44,10 @@ public partial class HealthComponent : Node
 		EmitSignal(SignalName.Died);
 		GetParent().QueueFree();
 	GD.Print($"{GetParent().Name} murio");
+	EmitSignal(SignalName.Died);
 	GetParent().QueueFree();
+	if(GetParent().Name == "player"){
 	GetTree().ChangeSceneToFile("res://scenes/Game Over/Game Over.tscn");
+	}
 	}
 }

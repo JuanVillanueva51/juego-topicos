@@ -40,9 +40,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ydrnu"]
-radius = 3.1622777
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmx86"]
 radius = 6.0
 
@@ -54,19 +51,17 @@ autoplay = "default"
 frame = 3
 frame_progress = 0.37740913
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1438405981]
-shape = SubResource("CircleShape2D_ydrnu")
-
 [node name="ProjectileMovementComponent" type="Node" parent="." unique_id=394319517]
 script = ExtResource("2_mo22o")
 Speed = 150.0
 
-[node name="ProjectileDmgArea" type="Area2D" parent="." unique_id=878826977]
+[node name="ProjectileDamageComponent" type="Area2D" parent="." unique_id=878826977]
 position = Vector2(-1, -2)
-collision_layer = 2
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("3_lkt5p")
 dmg = 25
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDmgArea" unique_id=379511959]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDamageComponent" unique_id=379511959]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_lmx86")

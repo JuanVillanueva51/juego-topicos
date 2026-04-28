@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://qxmrlk4w2qc6"]
+
+[ext_resource type="PackedScene" uid="uid://dw1kiqee1r46q" path="res://scenes/Objetos/sniper_bullet.tscn" id="1_1u7wd"]
+[ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="1_2lquy"]
+[ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="2_qf3xv"]
+
+[resource]
+script = ExtResource("1_2lquy")
+name = "Sniper"
+ProjectileScene = ExtResource("1_1u7wd")
+WeaponTexture = ExtResource("2_qf3xv")
+cooldown = 1.2
+dmg = 25
+projectileSpeed = 700.0
+projectileScale = 1.2
+lifeTime = 4.0
+pierce = true
+pierceCount = 10
+metadata/_custom_type_script = "uid://dbo7klliu07uj"

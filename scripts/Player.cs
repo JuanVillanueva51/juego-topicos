@@ -22,6 +22,7 @@ public partial class Player : CharacterBody2D
 	}
 	public const float Speed = 300.0f;
 	private AnimatedSprite2D sprite;
+
 	/*
 	Revisamos constantemente el movimiento del jugador, en este caso utilizamos
 	La variable de stats para modificar la velocidad final del jugador en base
@@ -53,50 +54,5 @@ public partial class Player : CharacterBody2D
 		}
 		Velocity = velocity;
 		MoveAndSlide();
-		
-		UpdateAnimation();
-	}
-	private void UpdateAnimation()
-	{
-		if (Velocity.Y > 0.2f)
-		{
-			PlayAnim("walk_Down");
-		}
-		else if (Velocity.Y < -0.2f)
-		{
-			PlayAnim("walk_Up");
-		}
-		else if (Velocity.X > 0.2f)
-		{
-			sprite.FlipH = true;
-			PlayAnim("walk_Left_Down");
-		}
-		else if (Velocity.X < -0.2f)
-		{
-			sprite.FlipH = true;
-			PlayAnim("walk_Right_Down");
-		}
-		if (Velocity.X > 0.2f && Velocity.Y > 0.2f){
-			sprite.FlipH = false;
-			PlayAnim("walk_Right_Down");
-		}
-		else if (Velocity.X < -0.2f && Velocity.Y > 0.2f){
-			sprite.FlipH = false;
-			PlayAnim("walk_Left_Down");
-		}
-		else if (Velocity.X > 0.2f && Velocity.Y <  -0.2f){
-			sprite.FlipH = false;
-			PlayAnim("walk_Right_Up");
-		}
-		else if (Velocity.X < -0.2f && Velocity.Y < -0.2f){
-			sprite.FlipH = false;
-			PlayAnim("walk_Left_Up");
-		}
-	}
-	
-	private void PlayAnim(string anim)
-	{
-		if (sprite.Animation != anim)
-			sprite.Play(anim);
 	}
 }
