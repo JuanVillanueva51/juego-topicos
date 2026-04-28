@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cnvav7evydiqt"]
+
+[ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="1_6nlrk"]
+[ext_resource type="PackedScene" uid="uid://byn5e0ba24i84" path="res://scenes/Objetos/pencil_bullet.tscn" id="1_r6k5j"]
+[ext_resource type="Texture2D" uid="uid://dfbce4m3tt3fk" path="res://assets/sprites/pencilproyectile.png" id="1_ran6q"]
+
+[resource]
+script = ExtResource("1_6nlrk")
+name = "Pencil"
+ProjectileScene = ExtResource("1_r6k5j")
+WeaponTexture = ExtResource("1_ran6q")
+cooldown = 0.7
+dmg = 5
+projectileSpeed = 200.0
+pierceCount = 1
+metadata/_custom_type_script = "uid://dbo7klliu07uj"

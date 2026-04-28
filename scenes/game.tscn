@@ -6,7 +6,9 @@
 [ext_resource type="Resource" uid="uid://c832cykeqrdyq" path="res://assets/Data/slime_data.tres" id="53_3hbvx"]
 [ext_resource type="Script" uid="uid://5mojm637k7sm" path="res://ShopUI.cs" id="54_bk1p3"]
 [ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="55_n8ral"]
+[ext_resource type="Resource" uid="uid://cnvav7evydiqt" path="res://assets/Data/pencil_data.tres" id="56_ms3bu"]
 [ext_resource type="Resource" uid="uid://c5wgk7e16ot0h" path="res://assets/Data/rifle_data.tres" id="56_yd4ix"]
+[ext_resource type="PackedScene" uid="uid://b1qd0r10pt60j" path="res://scenes/upgrade_tower.tscn" id="57_7ixpq"]
 [ext_resource type="Resource" uid="uid://v5jhmey3kjaj" path="res://assets/Data/shotgun_data.tres" id="57_66xif"]
 [ext_resource type="Resource" uid="uid://qxmrlk4w2qc6" path="res://assets/Data/sniper_data.tres" id="58_bnuda"]
 [ext_resource type="AudioStream" uid="uid://b4l8gpnkrlo36" path="res://assets/music/time_for_adventure.mp3" id="70_7nv0b"]
@@ -6600,8 +6602,10 @@ script = ExtResource("52_pf7vy")
 enemies = Array[Object]([ExtResource("52_o8ni1"), ExtResource("53_3hbvx")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250487610]
+process_mode = 3
 
 [node name="ShopUI" type="Control" parent="CanvasLayer" unique_id=1959760963 node_paths=PackedStringArray("waveManager", "playerShooter", "stats", "RestTimerLabel", "OpenShopLabel", "ShopPanel", "WeaponListContainer", "CloseButton")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("54_bk1p3")
@@ -6613,7 +6617,7 @@ OpenShopLabel = NodePath("ShopKeyLabel")
 ShopPanel = NodePath("ShopPanel")
 WeaponListContainer = NodePath("ShopPanel/WeaponContainer")
 CloseButton = NodePath("ShopPanel/CloseButton")
-weapons = Array[ExtResource("55_n8ral")]([ExtResource("56_yd4ix"), ExtResource("57_66xif"), ExtResource("58_bnuda")])
+weapons = Array[ExtResource("55_n8ral")]([ExtResource("56_yd4ix"), ExtResource("57_66xif"), ExtResource("58_bnuda"), ExtResource("56_ms3bu")])
 
 [node name="RestLabel" type="Label" parent="CanvasLayer/ShopUI" unique_id=1950490375]
 layout_mode = 0
@@ -6630,6 +6634,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="ShopPanel" type="Panel" parent="CanvasLayer/ShopUI" unique_id=1327396844]
+process_mode = 3
 visible = false
 layout_mode = 0
 offset_right = 40.0
@@ -6642,14 +6647,22 @@ offset_bottom = 23.0
 horizontal_alignment = 1
 
 [node name="WeaponContainer" type="VBoxContainer" parent="CanvasLayer/ShopUI/ShopPanel" unique_id=891000029]
+process_mode = 3
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 alignment = 1
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/ShopUI/ShopPanel" unique_id=847632805]
+process_mode = 3
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="UpgradeTower" parent="." unique_id=1758912205 instance=ExtResource("57_7ixpq")]
+position = Vector2(195, -119)
+
+[node name="UpgradeTower2" parent="." unique_id=392536624 instance=ExtResource("57_7ixpq")]
+position = Vector2(221, 127)
 
 [editable path="player"]

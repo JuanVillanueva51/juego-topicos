@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d2stby1ip2xmn" path="res://UpgradeSystem.cs" id="7_3v2ag"]
 [ext_resource type="Script" uid="uid://buyny3ta7e33d" path="res://LevelUpUI.cs" id="8_jej6c"]
 [ext_resource type="Script" uid="uid://b1rw2womjx2ux" path="res://StatsForPlayer.cs" id="9_f1ej7"]
+[ext_resource type="Script" uid="uid://msccr2ix7uyu" path="res://scenes/players/PlayerUpgradeStats.cs" id="11_fsrjl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -76,7 +77,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(7, 17)
+size = Vector2(8, 21)
 
 [node name="player" type="CharacterBody2D" unique_id=1688695486]
 collision_layer = 2
@@ -94,6 +95,7 @@ autoplay = "idleDOWN"
 frame_progress = 0.56330514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998602919]
+position = Vector2(1, 7.5)
 shape = SubResource("RectangleShape2D_d2wvv")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1034327667]
@@ -127,6 +129,9 @@ script = ExtResource("8_jej6c")
 
 [node name="StatsForPlayerComponent" type="Node" parent="." unique_id=243241846]
 script = ExtResource("9_f1ej7")
+
+[node name="PlayerUpgradeStats" type="Node" parent="." unique_id=1329559503]
+script = ExtResource("11_fsrjl")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1683474953]
 zoom = Vector2(2, 2)

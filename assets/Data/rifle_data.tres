@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c5wgk7e16ot0h"]
 
-[ext_resource type="PackedScene" uid="uid://de0q3y4dflpfg" path="res://scenes/normal_bullet.tscn" id="1_edrgo"]
+[ext_resource type="PackedScene" uid="uid://de0q3y4dflpfg" path="res://scenes/Objetos/normal_bullet.tscn" id="1_edrgo"]
 [ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="1_pwisn"]
 [ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="2_pb865"]
 

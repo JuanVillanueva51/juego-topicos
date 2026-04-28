@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b1qd0r10pt60j"]
+
+[ext_resource type="Script" uid="uid://bcxdaigbvmkti" path="res://scenes/UpgradeTower.cs" id="1_fsh5o"]
+[ext_resource type="Texture2D" uid="uid://bu6gx6n1xv6s3" path="res://assets/sprites/church.png" id="1_mc5ts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsh5o"]
+radius = 99.00505
+
+[node name="UpgradeTower" type="Area2D" unique_id=1758912205]
+collision_mask = 2
+script = ExtResource("1_fsh5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531288117]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_mc5ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683068104]
+shape = SubResource("CircleShape2D_fsh5o")
+
+[node name="StayTimer" type="Timer" parent="." unique_id=146625385]
+wait_time = 15.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1717047003]
+process_mode = 3
+
+[node name="UpgradeUI" type="Control" parent="CanvasLayer" unique_id=1102163744]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UpgradeUI" unique_id=564774497]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_right = 58.0
+offset_bottom = 45.0
+grow_horizontal = 2
+max_value = 15.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI" unique_id=998676501]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 593.0
+offset_top = 271.0
+offset_right = 120.5
+offset_bottom = 72.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UpgradeUI/Panel" unique_id=805048071]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UpgradeUI/Panel/VBoxContainer" unique_id=342928713]
+layout_mode = 2
+size_flags_vertical = 6
+text = "¡Mejora disponible! Elige una:\""
+horizontal_alignment = 1
+
+[node name="Btn0" type="Button" parent="CanvasLayer/UpgradeUI/Panel/VBoxContainer" unique_id=1825104977]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Btn1" type="Button" parent="CanvasLayer/UpgradeUI/Panel/VBoxContainer" unique_id=1264348276]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Btn2" type="Button" parent="CanvasLayer/UpgradeUI/Panel/VBoxContainer" unique_id=769788075]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

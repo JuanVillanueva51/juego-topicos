@@ -117,6 +117,7 @@ public partial class ShopUI : Control
 			return;
 
 		HBoxContainer row = new HBoxContainer();
+		row.ProcessMode = ProcessModeEnum.Always;
 		/*
 		Empezamos a asignar los valores dentro del weapon data para cada weapon*/
 		Label weaponLabel = new Label();
@@ -127,6 +128,7 @@ public partial class ShopUI : Control
 			+ " | Proyectiles: " + weapon.shootQuantity;
 		Button buyButton = new Button();
 		buyButton.Text = "Comprar";
+		buyButton.ProcessMode = ProcessModeEnum.Always;
 
 		buyButton.Pressed += () => TryBuyWeapon(weapon);
 

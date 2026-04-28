@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://byn5e0ba24i84"]
+
+[ext_resource type="Texture2D" uid="uid://dfbce4m3tt3fk" path="res://assets/sprites/pencilproyectile.png" id="1_47rdm"]
+[ext_resource type="Script" uid="uid://sha53hnmpf7p" path="res://ProjectileMovementComponent.cs" id="2_xpue8"]
+[ext_resource type="Script" uid="uid://bpq1ggejo4mhg" path="res://ProjectileDamageComponent.cs" id="3_4bkc7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gijr"]
+radius = 2.0
+
+[node name="pencil_bullet" type="CharacterBody2D" unique_id=901552787]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1255010496]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, 0)
+scale = Vector2(0.703125, 0.53125)
+texture = ExtResource("1_47rdm")
+
+[node name="ProjectileMovementComponent" type="Node" parent="." unique_id=2104652793]
+script = ExtResource("2_xpue8")
+Speed = 150.0
+
+[node name="ProjectileDamageComponent" type="Area2D" parent="." unique_id=1173373578]
+position = Vector2(-1, -2)
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("3_4bkc7")
+dmg = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDamageComponent" unique_id=843687187]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_0gijr")
