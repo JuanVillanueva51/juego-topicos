@@ -9,6 +9,11 @@ public partial class GOLDCOIN : BasePick
 	protected override void PickUp(Node player)
 	{
 		var stats = player.GetNodeOrNull<StatsForPlayer>("StatsForPlayerComponent");
+		if (stats == null)
+		{
+			GD.PrintErr("GOLDCOIN: No se encontró StatsForPlayerComponent en el jugador.");
+			return;
+		}
 		stats.addGold(goldAplied);
 		GD.Print($"{goldAplied} dinero recogido. Dinero actual {stats.gold}");
 	}

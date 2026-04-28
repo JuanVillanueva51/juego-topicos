@@ -42,12 +42,13 @@ public partial class HealthComponent : Node
 	public void die(){
 		GD.Print($"{GetParent().Name} murio");
 		EmitSignal(SignalName.Died);
+		// Verificamos si es el jugador ANTES de liberar el nodo
+		if(GetParent().Name == "player"){
+			GetParent().QueueFree();
+			GetTree().ChangeSceneToFile("res://scenes/Game Over/Game Over.tscn");
+			return;
+		}
 		GetParent().QueueFree();
-	GD.Print($"{GetParent().Name} murio");
-	EmitSignal(SignalName.Died);
-	GetParent().QueueFree();
-	if(GetParent().Name == "player"){
-	GetTree().ChangeSceneToFile("res://scenes/Game Over/Game Over.tscn");
 	}
-	}
+
 }

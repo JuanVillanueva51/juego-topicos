@@ -13,8 +13,13 @@ public partial class XPORB : BasePick
 	protected override void PickUp(Node player)
 	{
 		var stats = player.GetNodeOrNull<StatsForPlayer>("StatsForPlayerComponent");
-		
+		if (stats == null)
+		{
+			GD.PrintErr("XPORB: No se encontró StatsForPlayerComponent en el jugador.");
+			return;
+		}
 		stats.addXP(xpAplied);
 		GD.Print($"{xpAplied} experiencia recogida.");
 	}
+
 }

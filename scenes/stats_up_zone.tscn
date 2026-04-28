@@ -1,13 +1,62 @@
 [gd_scene format=3 uid="uid://cdxs1g3nuj53c"]
 
-[ext_resource type="Script" uid="uid://duud6nou0tfoh" path="res://scripts/StatsUpZone.cs" id="1_mgh8w"]
 [ext_resource type="Texture2D" uid="uid://dnh0wpg076hje" path="res://assets/sprites/Terreno/statsUp_Pillar.png" id="2_ftrd0"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_q8j3a"]
+script/source = "using Godot;
+using System;
+
+public partial class StatsUpZone : Node2D
+{
+	private Timer stayTimer;
+	private Control upgradeMenu;
+
+	public override void _Ready()
+	{
+		GD.Print(\"Pillar\");
+		
+		stayTimer = GetNode<Timer>(\"Timer1\");
+		// Ajusta la ruta según dónde tengas tu menú en la escena principal
+		
+		upgradeMenu = GetTree().GetFirstNodeInGroup(\"upgrademenu\") as Control;
+
+		Connect(\"body_entered\", new Callable(this, nameof(OnBodyEntered)));
+		Connect(\"body_exited\", new Callable(this, nameof(OnBodyExited)));
+		stayTimer.Timeout += OnTimerTimeout;
+	}
+
+	private void OnBodyEntered(Node body)
+	{
+		GD.Print(\"Entro\");
+		if (body.IsInGroup(\"player\"))
+		{
+			stayTimer.Start();
+		}
+	}
+
+	private void OnBodyExited(Node body)
+	{
+		GD.Print(\"Salio\");
+		if (body.IsInGroup(\"player\"))
+		{
+			stayTimer.Stop();
+		}
+	}
+
+	private void OnTimerTimeout()
+	{
+		GD.Print(\"Okay!\");
+		upgradeMenu.Visible = true;
+	}
+	
+}
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xvinf"]
 radius = 70.34913
 
-[node name="statsUpZone" type="Area2D" unique_id=340132838]
-script = ExtResource("1_mgh8w")
+[node name="statsUpZone" type="Node2D" unique_id=1385071432]
+script = SubResource("CSharpScript_q8j3a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=247923535]
 texture_filter = 1
@@ -19,7 +68,3 @@ shape = SubResource("CircleShape2D_xvinf")
 [node name="Timer1" type="Timer" parent="." unique_id=717524996]
 wait_time = 5.0
 one_shot = true
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]

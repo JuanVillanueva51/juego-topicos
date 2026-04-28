@@ -39,14 +39,22 @@ public partial class WaveManager : Node
 	private bool spawneando = false;
 	
 	/*
-	Al iniciar la wave obtenemos el jugador y iniciamos el juego en modo de descanso*/
+	Al iniciar la wave iniciamos el descanso y diferimos la busqueda del player.
+	CallDeferred garantiza que la busqueda ocurra despues de que todos los _Ready()
+	del arbol de escena hayan terminado, incluyendo el del player que es donde
+	se hace AddToGroup("player").*/
 	public override void _Ready(){
+		descansar();
+		CallDeferred(MethodName.FindPlayer);
+	}
+
+	private void FindPlayer(){
 		player = GetTree().GetFirstNodeInGroup("player") as Node2D;
 		if(player == null){
-			GD.Print("Wave manager no encontro al player");
+			GD.PrintErr("WaveManager: no se encontro al player");
 		}
-		descansar();
 	}
+
 	/*
 	Metodo de proccess*/
 	public override void _Process(double delta){

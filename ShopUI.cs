@@ -38,7 +38,7 @@ public partial class ShopUI : Control
 		{
 			CloseButton.Pressed += CloseShop;
 		}
-
+		AddToGroup("player");
 		BuildShop();
 	}
 

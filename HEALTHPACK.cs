@@ -14,6 +14,11 @@ public partial class HEALTHPACK : BasePick
 	protected override void PickUp(Node player)
 	{
 		var health = player.GetNodeOrNull<HealthComponent>("HealthComponent");
+		if (health == null)
+		{
+			GD.PrintErr("HEALTHPACK: No se encontró HealthComponent en el jugador.");
+			return;
+		}
 		health.Heal(healthAplied);
 		GD.Print($"{healthAplied} curado. Vida actual {health.currentHealth}");
 	}

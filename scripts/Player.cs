@@ -6,8 +6,10 @@ public partial class Player : CharacterBody2D
 	/*
 	Establecemos la velocidad inicial del jugador junto con una variable de
 	tipo StatsForPlayer para sus estadisticas*/
-	public const float speed = 300.0f;
+	public const float Speed = 300.0f;
 	private StatsForPlayer stats;
+	private AnimatedSprite2D sprite;
+
 	/*
 	Añadimos al jugador al grupo de player y obtenemos la variable de estadisticas
 	del componente de StatsForPlayerComponent*/
@@ -20,8 +22,6 @@ public partial class Player : CharacterBody2D
 			GD.Print("No se encontro component");
 		}
 	}
-	public const float Speed = 300.0f;
-	private AnimatedSprite2D sprite;
 
 	/*
 	Revisamos constantemente el movimiento del jugador, en este caso utilizamos
@@ -32,7 +32,7 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 	
-		float speedFinal = speed;
+		float speedFinal = Speed;
 		if(stats != null){
 			speedFinal += stats.speedExtra;
 		}
@@ -49,10 +49,11 @@ public partial class Player : CharacterBody2D
 		else
 		{
 			// Desaceleración suave en ambos ejes
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
-			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, speed);
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, Speed);
 		}
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
 }
