@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://2rmtbepiqo0y" path="res://AimComponent.cs" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="6_d2wvv"]
 [ext_resource type="Script" uid="uid://d2stby1ip2xmn" path="res://UpgradeSystem.cs" id="7_3v2ag"]
-[ext_resource type="Script" uid="uid://buyny3ta7e33d" path="res://LevelUpUI.cs" id="8_jej6c"]
+[ext_resource type="Script" uid="uid://cjx82sk1g6smd" path="res://scenes/LevelUpUI/LevelUpUI.cs" id="8_jej6c"]
 [ext_resource type="Script" uid="uid://b1rw2womjx2ux" path="res://StatsForPlayer.cs" id="9_f1ej7"]
 [ext_resource type="Script" uid="uid://msccr2ix7uyu" path="res://scenes/players/PlayerUpgradeStats.cs" id="11_fsrjl"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b43s6fx40a1ei"]
 
-[ext_resource type="PackedScene" uid="uid://diju0yli0ml8i" path="res://scenes/players/player.tscn" id="1_0rmfi"]
+[ext_resource type="PackedScene" path="res://scenes/players/player.tscn" id="1_0rmfi"]
 [ext_resource type="Resource" uid="uid://d2t6indotcw2m" path="res://assets/Data/bee_data.tres" id="52_o8ni1"]
 [ext_resource type="Script" uid="uid://cq7880g86jp2e" path="res://WaveManager.cs" id="52_pf7vy"]
 [ext_resource type="Resource" uid="uid://c832cykeqrdyq" path="res://assets/Data/slime_data.tres" id="53_3hbvx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://c5wgk7e16ot0h" path="res://assets/Data/rifle_data.tres" id="56_yd4ix"]
 [ext_resource type="PackedScene" uid="uid://b1qd0r10pt60j" path="res://scenes/upgrade_tower.tscn" id="57_7ixpq"]
 [ext_resource type="Resource" uid="uid://v5jhmey3kjaj" path="res://assets/Data/shotgun_data.tres" id="57_66xif"]
+[ext_resource type="PackedScene" path="res://scenes/LevelUpUI/LevelUpUI.tscn" id="58_bk1p3"]
 [ext_resource type="Resource" uid="uid://qxmrlk4w2qc6" path="res://assets/Data/sniper_data.tres" id="58_bnuda"]
 [ext_resource type="AudioStream" uid="uid://b4l8gpnkrlo36" path="res://assets/music/time_for_adventure.mp3" id="70_7nv0b"]
 [ext_resource type="Texture2D" uid="uid://du2kdoxgrtr0y" path="res://assets/sprites/Terreno/2 Objects/4 Stone/1.png" id="71_okmmv"]
@@ -6664,5 +6665,7 @@ position = Vector2(195, -119)
 
 [node name="UpgradeTower2" parent="." unique_id=392536624 instance=ExtResource("57_7ixpq")]
 position = Vector2(221, 127)
+
+[node name="LevelUpUi" parent="." unique_id=216558338 instance=ExtResource("58_bk1p3")]
 
 [editable path="player"]
