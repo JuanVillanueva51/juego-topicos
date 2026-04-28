@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://c832cykeqrdyq" path="res://assets/Data/slime_data.tres" id="53_3hbvx"]
 [ext_resource type="Script" uid="uid://5mojm637k7sm" path="res://ShopUI.cs" id="54_bk1p3"]
 [ext_resource type="Script" uid="uid://dbo7klliu07uj" path="res://WeaponData.cs" id="55_n8ral"]
+[ext_resource type="PackedScene" uid="uid://bpkbre621ty8p" path="res://scenes/LevelUpUI/LevelUpUI.tscn" id="55_q8j3a"]
 [ext_resource type="Resource" uid="uid://c5wgk7e16ot0h" path="res://assets/Data/rifle_data.tres" id="56_yd4ix"]
 [ext_resource type="Resource" uid="uid://v5jhmey3kjaj" path="res://assets/Data/shotgun_data.tres" id="57_66xif"]
 [ext_resource type="Resource" uid="uid://qxmrlk4w2qc6" path="res://assets/Data/sniper_data.tres" id="58_bnuda"]
@@ -6651,5 +6652,8 @@ alignment = 1
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="LevelUpUi" parent="." unique_id=216558338 instance=ExtResource("55_q8j3a")]
+follow_viewport_enabled = false
 
 [editable path="player"]

@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://2rmtbepiqo0y" path="res://AimComponent.cs" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="6_d2wvv"]
 [ext_resource type="Script" uid="uid://d2stby1ip2xmn" path="res://UpgradeSystem.cs" id="7_3v2ag"]
-[ext_resource type="Script" uid="uid://buyny3ta7e33d" path="res://LevelUpUI.cs" id="8_jej6c"]
 [ext_resource type="Script" uid="uid://b1rw2womjx2ux" path="res://StatsForPlayer.cs" id="9_f1ej7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
@@ -120,10 +119,6 @@ texture = ExtResource("6_d2wvv")
 [node name="UpgradeSystem" type="Node" parent="." unique_id=93273634]
 process_mode = 3
 script = ExtResource("7_3v2ag")
-
-[node name="LevelUpUI" type="CanvasLayer" parent="." unique_id=348753626]
-process_mode = 3
-script = ExtResource("8_jej6c")
 
 [node name="StatsForPlayerComponent" type="Node" parent="." unique_id=243241846]
 script = ExtResource("9_f1ej7")
