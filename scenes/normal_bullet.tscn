@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://de0q3y4dflpfg"]
+
+[ext_resource type="Texture2D" uid="uid://cx7iaqtycs8sd" path="res://assets/sprites/All_Fire_Bullet_Pixel_16x16_00.png" id="1_fbib7"]
+[ext_resource type="Script" uid="uid://sha53hnmpf7p" path="res://ProjectileMovementComponent.cs" id="2_mo22o"]
+[ext_resource type="Script" uid="uid://bpq1ggejo4mhg" path="res://ProjectileDamageComponent.cs" id="3_lkt5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7lof"]
+atlas = ExtResource("1_fbib7")
+region = Rect2(96, 304, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m36r1"]
+atlas = ExtResource("1_fbib7")
+region = Rect2(112, 304, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndhei"]
+atlas = ExtResource("1_fbib7")
+region = Rect2(128, 304, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3io4"]
+atlas = ExtResource("1_fbib7")
+region = Rect2(144, 304, 16, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxpvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7lof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m36r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndhei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3io4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydrnu"]
+radius = 3.1622777
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmx86"]
+radius = 6.0
+
+[node name="NormalBullet" type="CharacterBody2D" unique_id=1138550897]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=728315061]
+sprite_frames = SubResource("SpriteFrames_gxpvj")
+autoplay = "default"
+frame = 3
+frame_progress = 0.37740913
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1438405981]
+shape = SubResource("CircleShape2D_ydrnu")
+
+[node name="ProjectileMovementComponent" type="Node" parent="." unique_id=394319517]
+script = ExtResource("2_mo22o")
+Speed = 150.0
+
+[node name="ProjectileDmgArea" type="Area2D" parent="." unique_id=878826977]
+position = Vector2(-1, -2)
+collision_layer = 2
+script = ExtResource("3_lkt5p")
+dmg = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDmgArea" unique_id=379511959]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_lmx86")

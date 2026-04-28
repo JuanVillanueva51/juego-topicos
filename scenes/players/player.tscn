@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://diju0yli0ml8i"]
 
 [ext_resource type="Script" uid="uid://deco7iapjuraq" path="res://scripts/Player.cs" id="1_ldeu4"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bqbqpgb5cu1vu" path="res://scenes/players/walk_Down.png" id="2_sguum"]
 [ext_resource type="Texture2D" uid="uid://dbirhix77slmi" path="res://scenes/players/walk_Left_Down.png" id="3_jwv1m"]
+=======
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://wclo16di5v4q" path="res://assets/sprites/vietnam_war1.png" id="2_olb2f"]
+[ext_resource type="Script" uid="uid://b63en525ptfsg" path="res://HealthComponent.cs" id="3_kc87p"]
+[ext_resource type="Script" uid="uid://b5tgb63y2nq51" path="res://PlayerShooterComponent.cs" id="4_edvpf"]
+[ext_resource type="PackedScene" uid="uid://de0q3y4dflpfg" path="res://scenes/normal_bullet.tscn" id="5_olb2f"]
+[ext_resource type="Script" uid="uid://2rmtbepiqo0y" path="res://AimComponent.cs" id="6_jwv1m"]
+[ext_resource type="Texture2D" uid="uid://clj60vod63mfi" path="res://assets/sprites/Diseño_sin_título-removebg-preview.png" id="7_jwv1m"]
+[ext_resource type="Script" uid="uid://d2stby1ip2xmn" path="res://UpgradeSystem.cs" id="8_es4m5"]
+[ext_resource type="Script" uid="uid://buyny3ta7e33d" path="res://LevelUpUI.cs" id="9_fsrjl"]
+[ext_resource type="Script" uid="uid://b1rw2womjx2ux" path="res://StatsForPlayer.cs" id="10_mh0hk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olb2f"]
+atlas = ExtResource("2_olb2f")
+region = Rect2(0, 0, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sguum"]
+atlas = ExtResource("2_olb2f")
+region = Rect2(33, 0, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwv1m"]
+atlas = ExtResource("2_olb2f")
+region = Rect2(99, 0, 33, 34)
+=======
+[ext_resource type="Texture2D" uid="uid://p5t0itaj2t2n" path="res://scenes/players/walk_Down.png" id="2_sguum"]
+[ext_resource type="Texture2D" uid="uid://1ipficalfeob" path="res://scenes/players/walk_Left_Down.png" id="3_jwv1m"]
+>>>>>>> 6130112c521bc042f1bce39dfa1e777c2d29633d
 [ext_resource type="Script" uid="uid://b63en525ptfsg" path="res://HealthComponent.cs" id="3_kc87p"]
 [ext_resource type="Texture2D" uid="uid://cvbaj6r810ddc" path="res://scenes/players/walk_Right_Down.png" id="4_phaeh"]
 [ext_resource type="Texture2D" uid="uid://bl7ysnkc6fjdb" path="res://scenes/players/walk_Left_Up.png" id="4_yl2j2"]
@@ -200,11 +228,25 @@ region = Rect2(288, 0, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5isqs"]
 atlas = ExtResource("5_yl2j2")
 region = Rect2(336, 0, 48, 64)
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
+"texture": SubResource("AtlasTexture_olb2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sguum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwv1m")
+}],
+"loop": true,
+"name": &"idleDOWN",
+"speed": 2.5
+=======
 "texture": SubResource("AtlasTexture_es4m5")
 }, {
 "duration": 1.0,
@@ -376,6 +418,7 @@ animations = [{
 "loop": true,
 "name": &"walk_Up",
 "speed": 10.0
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
@@ -388,15 +431,51 @@ collision_mask = 3
 script = ExtResource("1_ldeu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975637748]
+z_as_relative = false
 texture_filter = 1
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
+<<<<<<< HEAD
+animation = &"idleDOWN"
+autoplay = "idleDOWN"
+frame_progress = 0.47433951
+=======
 animation = &"walk_Left_Down"
 autoplay = "walk_Down"
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998602919]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_d2wvv")
 
+<<<<<<< HEAD
+[node name="HealthComponent" type="Node" parent="." unique_id=2031225132]
+script = ExtResource("3_kc87p")
+maxHealth = 100000
+
+[node name="PlaterShooterComponent" type="Node" parent="." unique_id=1768168047]
+script = ExtResource("4_edvpf")
+ProjectileScene = ExtResource("5_olb2f")
+
+[node name="AimComponent" type="Node2D" parent="." unique_id=1737454296]
+script = ExtResource("6_jwv1m")
+
+[node name="WeaponSprite" type="Sprite2D" parent="AimComponent" unique_id=1858900356]
+position = Vector2(-1.0000004, 11)
+scale = Vector2(0.24544702, 0.30027172)
+texture = ExtResource("7_jwv1m")
+
+[node name="UpgradeSystem" type="Node" parent="." unique_id=2031048580]
+script = ExtResource("8_es4m5")
+
+[node name="LevelUPUI" type="CanvasLayer" parent="." unique_id=24092943]
+process_mode = 3
+script = ExtResource("9_fsrjl")
+
+[node name="StatsForPlayerComponent" type="Node" parent="." unique_id=1220449614]
+script = ExtResource("10_mh0hk")
+=======
 [node name="HealthComponent" type="Node" parent="." unique_id=2007251862]
 script = ExtResource("3_kc87p")
 maxHealth = 10
+>>>>>>> a8365dfa1b527da306c5d74cdce44a7d369954ef

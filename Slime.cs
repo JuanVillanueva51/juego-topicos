@@ -1,46 +1,43 @@
 using Godot;
 using System;
 
-public partial class Bee : EnemyBase
+public partial class Slime : EnemyBase
 {
-	//Creamos el sprite
+	/*
+	Clase de los enemigos, los iniciamos dentro del grupo y aplicamos las animaciones en 
+	base  asu velocidad dentro de los ejes*/
 	private AnimatedSprite2D sprite;
-	//Inicializamos el enemy dentro de un grupo y ejecutamos el codigo base de EnemyBase
 	public override void _Ready()
 	{
 		AddToGroup("enemy");
 		base._Ready();
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
-	//Actualiazmos la animacion
 	public override void _PhysicsProcess(double delta)
 	{
 		UpdateAnimation();
 	}
-	//Ejecutamos las animaciones en base a la velocidad dentro de los vectores
 	private void UpdateAnimation()
 	{
 		if (Velocity.Y > 0.2f)
 		{
-			PlayAnim("walk_DOWN");
+			PlayAnim("Walk");
 		}
 		else if (Velocity.Y < -0.2f)
 		{
-			PlayAnim("walk_UP");
+			PlayAnim("Walk");
 		}
 		else if (Velocity.X > 0.2f)
 		{
 			sprite.FlipH = true;
-			PlayAnim("walk_LEFT");
+			PlayAnim("Walk");
 		}
 		else if (Velocity.X < -0.2f)
 		{
 			sprite.FlipH = false;
-			PlayAnim("walk_LEFT");
+			PlayAnim("Walk");
 		}
 	}
-	//Nos aseguramos de ejecutarlo solo si la animacion solicita sea diferente a la ejecutada
-	//actualmente
 	private void PlayAnim(string anim)
 	{
 		if (sprite.Animation != anim)

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://boheqkaw6le4p"]
+
+[ext_resource type="Texture2D" uid="uid://cueo023ucnqt0" path="res://assets/sprites/waterballanim1.png" id="1_3ls1y"]
+[ext_resource type="Script" uid="uid://sha53hnmpf7p" path="res://ProjectileMovementComponent.cs" id="2_q6okr"]
+[ext_resource type="Script" uid="uid://bpq1ggejo4mhg" path="res://ProjectileDamageComponent.cs" id="3_td2k8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6okr"]
+atlas = ExtResource("1_3ls1y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td2k8"]
+atlas = ExtResource("1_3ls1y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foi0u"]
+atlas = ExtResource("1_3ls1y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ri5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6okr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td2k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foi0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1b80m"]
+radius = 2.236068
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_foi0u"]
+radius = 6.0
+
+[node name="waterball" type="CharacterBody2D" unique_id=1372656132]
+collision_layer = 8
+collision_mask = 17
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1792905322]
+sprite_frames = SubResource("SpriteFrames_6ri5i")
+autoplay = "default"
+frame_progress = 0.40477806
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972407754]
+shape = SubResource("CircleShape2D_1b80m")
+
+[node name="ProjectileMovementComponent" type="Node" parent="." unique_id=34937472]
+script = ExtResource("2_q6okr")
+Speed = 150.0
+
+[node name="ProjectileDmgArea" type="Area2D" parent="." unique_id=1828930593]
+position = Vector2(-1, -2)
+collision_mask = 2
+script = ExtResource("3_td2k8")
+dmg = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileDmgArea" unique_id=1391299765]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_foi0u")

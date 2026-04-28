@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://c832cykeqrdyq"]
+
+[ext_resource type="PackedScene" uid="uid://drtgkupikwqtc" path="res://scenes/enemies/slime.tscn" id="1_opk8i"]
+[ext_resource type="Script" uid="uid://50flnbowpjrn" path="res://SpawnData.cs" id="1_qh2s4"]
+
+[resource]
+script = ExtResource("1_qh2s4")
+enemyScene = ExtResource("1_opk8i")
+peso = 1
+metadata/_custom_type_script = "uid://50flnbowpjrn"

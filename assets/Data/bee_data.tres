@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://d2t6indotcw2m"]
+
+[ext_resource type="PackedScene" uid="uid://ct7uxvwyah1ur" path="res://scenes/bee.tscn" id="1_d5gkm"]
+[ext_resource type="Script" uid="uid://50flnbowpjrn" path="res://SpawnData.cs" id="1_o3eo1"]
+
+[resource]
+script = ExtResource("1_o3eo1")
+enemyScene = ExtResource("1_d5gkm")
+spawnWave = 2
+peso = 5
+Difficulty = 2
+metadata/_custom_type_script = "uid://50flnbowpjrn"

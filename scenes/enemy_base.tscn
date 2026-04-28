@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://b54ifdkaqtj0p" path="res://EnemyBase.cs" id="1_fr7lv"]
 
 [node name="EnemyBase" type="CharacterBody2D" unique_id=1227936157]
+collision_mask = 2
 script = ExtResource("1_fr7lv")
