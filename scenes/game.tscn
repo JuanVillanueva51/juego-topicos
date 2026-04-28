@@ -6667,5 +6667,6 @@ position = Vector2(195, -119)
 position = Vector2(221, 127)
 
 [node name="LevelUpUi" parent="." unique_id=216558338 instance=ExtResource("58_bk1p3")]
+layer = 5
 
 [editable path="player"]

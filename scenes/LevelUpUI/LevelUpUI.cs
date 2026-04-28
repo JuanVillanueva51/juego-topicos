@@ -10,7 +10,7 @@ public partial class LevelUpUI : CanvasLayer
 		AddToGroup("levelUpUI");
 		Visible = false;
 		
-		GetNode<Button>("VBoxContainer/Button").Pressed += () => SelectUpgrades(1);
+		GetNode<Button>("VBoxContainer/Button1").Pressed += () => SelectUpgrades(1);
 		GetNode<Button>("VBoxContainer/Button2").Pressed += () => SelectUpgrades(2);
 		GetNode<Button>("VBoxContainer/Button3").Pressed += () => SelectUpgrades(3);
 
